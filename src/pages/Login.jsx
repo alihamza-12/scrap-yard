@@ -1,12 +1,12 @@
-import React from 'react'
-import PageLayOut from '../components/PagesLayout/PageLayOut'
+import React from "react";
+import PageLayOut from "../components/PagesLayout/PageLayOut";
 
 const Login = () => {
   return (
     <div>
-        <PageLayOut/>
+      <PageLayOut />
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
