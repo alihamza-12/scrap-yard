@@ -1,11 +1,19 @@
-import Footer from "./components/Footer/Footer";
-import Header from "./components/Header/Header";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import AppLayOut from "./components/AppLayOut/AppLayOut";
 
+
+
+
+const appRoute=createBrowserRouter([
+  {
+    path:'/',
+    element:<AppLayOut/>
+  }
+])
 function App() {
   return (
     <div className="bg-black">
-      <Header />
-      <Footer />
+      <RouterProvider router={appRoute}/>
     </div>
   );
 }
