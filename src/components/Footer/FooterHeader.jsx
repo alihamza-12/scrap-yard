@@ -7,19 +7,58 @@ import instagram from "../images/footer/instagram.webp";
 
 const FooterHeader = () => {
   return (
-    <div className="flex items-center justify-center gap-6 p-4">
-      <a href="https://twitter.com" target="_blank">
-        <img className="h-20 rounded-4xl" src={twitter} alt="Twitter" />
-      </a>
-      <a href="https://www.youtube.com" target="_blank">
-        <img className="h-20 w-20 rounded-full" src={youtube} alt="Youtube" />
-      </a>
-      <a href="https://www.whatsapp.com" target="_blank">
-        <img className="h-20 rounded-full" src={whatsapp} alt="Whatsapp" />
-      </a>
-      <a href="https://www.instagram.com" target="_blank">
-        <img className="h-20 rounded-full" src={instagram} alt="instagram" />
-      </a>
+    <div
+      className="
+        flex flex-wrap items-center justify-center
+        gap-4 p-4
+        sm:gap-6 sm:p-5
+        md:gap-8 md:p-6
+      "
+    >
+      <img
+        className="
+          h-12 w-12
+          sm:h-14 sm:w-14
+          md:h-16 md:w-16
+          lg:h-20 lg:w-20
+          rounded-full object-cover
+        "
+        src={twitter}
+        alt="Twitter"
+      />
+      <img
+        className="
+          h-12 w-12
+          sm:h-14 sm:w-14
+          md:h-16 md:w-16
+          lg:h-20 lg:w-20
+          rounded-full object-cover
+        "
+        src={youtube}
+        alt="YouTube"
+      />
+      <img
+        className="
+          h-12 w-12
+          sm:h-14 sm:w-14
+          md:h-16 md:w-16
+          lg:h-20 lg:w-20
+          rounded-full object-cover
+        "
+        src={whatsapp}
+        alt="WhatsApp"
+      />
+      <img
+        className="
+          h-12 w-12
+          sm:h-14 sm:w-14
+          md:h-16 md:w-16
+          lg:h-20 lg:w-20
+          rounded-full object-cover
+        "
+        src={instagram}
+        alt="Instagram"
+      />
     </div>
   );
 };
