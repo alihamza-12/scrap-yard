@@ -15,50 +15,58 @@ const FooterHeader = () => {
         md:gap-8 md:p-6
       "
     >
-      <img
-        className="
+      <a href="https://twitter.com" target="_blank">
+        <img
+          className="
           h-12 w-12
           sm:h-14 sm:w-14
           md:h-16 md:w-16
           lg:h-20 lg:w-20
           rounded-full object-cover
         "
-        src={twitter}
-        alt="Twitter"
-      />
-      <img
-        className="
+          src={twitter}
+          alt="Twitter"
+        />
+      </a>
+      <a href="https://www.youtube.com" target="_blank">
+        <img
+          className="
           h-12 w-12
           sm:h-14 sm:w-14
           md:h-16 md:w-16
           lg:h-20 lg:w-20
           rounded-full object-cover
         "
-        src={youtube}
-        alt="YouTube"
-      />
-      <img
-        className="
+          src={youtube}
+          alt="YouTube"
+        />
+      </a>
+      <a href="https://web.whatsapp.com" target="_blank">
+        <img
+          className="
           h-12 w-12
           sm:h-14 sm:w-14
           md:h-16 md:w-16
           lg:h-20 lg:w-20
           rounded-full object-cover
         "
-        src={whatsapp}
-        alt="WhatsApp"
-      />
-      <img
-        className="
+          src={whatsapp}
+          alt="WhatsApp"
+        />
+      </a>
+      <a href="https://www.instagram.com" target="_blank">
+        <img
+          className="
           h-12 w-12
           sm:h-14 sm:w-14
           md:h-16 md:w-16
           lg:h-20 lg:w-20
           rounded-full object-cover
         "
-        src={instagram}
-        alt="Instagram"
-      />
+          src={instagram}
+          alt="Instagram"
+        />
+      </a>
     </div>
   );
 };
