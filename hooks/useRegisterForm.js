@@ -72,6 +72,7 @@ const useRegisterForm = () => {
       Role: data.role,
     }).unwrap();
     //Store the Api response in the Store
+    
     //Dispatch
     // console.log(userResponse)
     dispatch(
@@ -88,6 +89,8 @@ const useRegisterForm = () => {
         token: userResponse.token,
       })
     );
+
+
     // console.log(
     //   "Registration successful: User:",
     //   {
