@@ -2,10 +2,10 @@ import z from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
-import { useUserRegisterMutation } from "../store/apiSlice/userSlice";
+import { useUserRegisterMutation } from "../../store/apiSlice/userSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { setCredentials } from "../store/slices/authSlice";
-import {  useNavigate } from "react-router-dom";
+import { setCredentials } from "../../store/slices/authSlice";
+import { useNavigate } from "react-router-dom";
 
 //Zod Schema
 const schema = z
@@ -38,10 +38,9 @@ const schema = z
   });
 
 const useRegisterForm = () => {
-
   //Store Dispatch
   const dispatch = useDispatch();
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   //Store useSelector
   const user = useSelector((state) => state.auth.user);
@@ -96,8 +95,7 @@ const useRegisterForm = () => {
         token: userResponse.token,
       })
     );
-    navigate('/')
-
+    navigate("/");
 
     // console.log(
     //   "Registration successful: User:",

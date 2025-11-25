@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import PageLayOut from "../components/PagesLayout/PageLayOut";
 import sellerIcon from "../components/images/footer/seller-icon.png";
 import buyerIcon from "../components/images/footer/buyer-icon.png";
-import useRegisterForm from "../../hooks/useRegisterForm";
+import useRegisterForm from "../hooks/useRegisterForm";
+
 
 const Register = () => {
+  //Custom hook for user Register
   const {
     register,
     handleSubmit,
@@ -14,6 +16,7 @@ const Register = () => {
     onSubmit,
     error,
   } = useRegisterForm();
+  
   return (
     <div>
       {/* PageLayOut */}

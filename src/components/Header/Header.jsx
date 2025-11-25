@@ -41,7 +41,7 @@ const Header = () => {
           </Link>
           <Link to={"/"}>
             <button
-              onClick={handleLogOut()}
+              onClick={handleLogOut}
               className="px-3 py-2 text-xs sm:text-sm md:text-base text-black bg-white rounded border cursor-pointer hover:underline"
             >
               Logout
