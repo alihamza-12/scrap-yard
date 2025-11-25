@@ -2,11 +2,19 @@ import { Link } from "react-router-dom";
 import logo from "../images/logo.png";
 
 import Navbar from "./Navbar";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../../store/slices/authSlice";
+import { useEffect } from "react";
 
 const Header = () => {
+  //dispatch
   const dispatch = useDispatch();
+  //useSelector
+  const user = useSelector((state) => state.auth.user);
+  //useEffect
+  useEffect(() => {
+    // console.log(user);
+  }, [user]);
 
   const handleLogOut = () => {
     dispatch(logout());
@@ -24,29 +32,37 @@ const Header = () => {
         </Link>
         {/* Buttons */}
         <div className="flex gap-3 sm:gap-4 md:gap-6 lg:gap-8 w-full justify-center sm:w-auto sm:justify-end">
-          <Link to={"/register"}>
-            <button className="px-3 py-2 text-xs sm:text-sm md:text-base text-black bg-white rounded border cursor-pointer hover:underline">
-              Register
-            </button>
-          </Link>
-          <Link to={"/login"}>
-            <button className="px-3 py-2 text-xs sm:text-sm md:text-base text-black bg-white rounded border cursor-pointer hover:underline">
-              Login
-            </button>
-          </Link>
-          <Link to={"/my-account"}>
-            <button className="px-3 py-2 text-xs sm:text-sm md:text-base text-black bg-white rounded border cursor-pointer hover:underline">
-              My Account
-            </button>
-          </Link>
-          <Link to={"/"}>
-            <button
-              onClick={handleLogOut}
-              className="px-3 py-2 text-xs sm:text-sm md:text-base text-black bg-white rounded border cursor-pointer hover:underline"
-            >
-              Logout
-            </button>
-          </Link>
+          {/* consitional Rendering */}
+          {!user ? (
+            <>
+              <Link to={"/register"}>
+                <button className="px-3 py-2 text-xs sm:text-sm md:text-base text-black bg-white rounded border cursor-pointer hover:underline">
+                  Register
+                </button>
+              </Link>
+              <Link to={"/login"}>
+                <button className="px-3 py-2 text-xs sm:text-sm md:text-base text-black bg-white rounded border cursor-pointer hover:underline">
+                  Login
+                </button>
+              </Link>
+            </>
+          ) : (
+            <>
+              <Link to={"/my-account"}>
+                <button className="px-3 py-2 text-xs sm:text-sm md:text-base text-black bg-white rounded border cursor-pointer hover:underline">
+                  My Account
+                </button>
+              </Link>
+              <Link to={"/"}>
+                <button
+                  onClick={handleLogOut}
+                  className="px-3 py-2 text-xs sm:text-sm md:text-base text-black bg-white rounded border cursor-pointer hover:underline"
+                >
+                  Logout
+                </button>
+              </Link>
+            </>
+          )}
         </div>
       </div>
 

@@ -5,8 +5,9 @@ import { Link } from "react-router-dom";
 const UserProfile = () => {
   const userData = useSelector((state) => state.auth.user);
   //   const token = useSelector((state) => state.auth.token);
-
-  const { FullName, Email, PhoneNo, Role, transactions = [] } = userData || {};
+ 
+  const { FullName, Email, PhoneNo, Role } = userData || {};
+  // const {_id, Price,fromDate,ScrapItem,Quantity } = userData?.transactions || {};
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 py-12 px-4 sm:px-6 lg:px-8">
@@ -51,7 +52,7 @@ const UserProfile = () => {
           <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-6 text-center md:text-left">
             Your Transactions
           </h2>
-          {transactions.length === 0 ? (
+          {userData?.transactions.length === 0 ? (
             <div className="text-center py-16">
               <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center text-4xl">
                 🛒
@@ -70,23 +71,24 @@ const UserProfile = () => {
               </Link>
             </div>
           ) : (
+            
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {transactions.map((transaction, index) => (
+              {userData?.transactions.map((transaction, index) => (
                 <div
-                  key={transaction.id || index}
+                  key={ index}
                   className="bg-gradient-to-br from-green-50 to-emerald-100 dark:from-gray-700 dark:to-gray-600 p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-green-200 dark:border-gray-600"
                 >
                   <h4 className="font-bold text-lg text-gray-800 dark:text-white mb-2">
-                    Order #{transaction.id || index + 1}
+                    Order #{ index + 1}
                   </h4>
                   <p className="text-2xl font-bold text-green-600 dark:text-green-400 mb-1">
-                    ${transaction.amount || "N/A"}
+                    {transaction.Price || "N/A"}
                   </p>
                   <p className="text-sm text-gray-600 dark:text-gray-300 mb-3">
-                    {transaction.date || "No date"}
+                    {transaction.fromDate || "No date"}
                   </p>
                   <span className="inline-block px-3 py-1 bg-green-200 dark:bg-green-800 text-xs font-semibold text-green-800 dark:text-green-200 rounded-full">
-                    {transaction.status || "Completed"}
+                    {transaction.ScrapItem }
                   </span>
                 </div>
               ))}
