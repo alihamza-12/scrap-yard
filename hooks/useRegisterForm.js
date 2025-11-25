@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useUserRegisterMutation } from "../store/apiSlice/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { setCredentials } from "../store/slices/authSlice";
+import {  useNavigate } from "react-router-dom";
 
 //Zod Schema
 const schema = z
@@ -37,11 +38,17 @@ const schema = z
   });
 
 const useRegisterForm = () => {
+
   //Store Dispatch
   const dispatch = useDispatch();
+  const navigate=useNavigate();
+
   //Store useSelector
   const user = useSelector((state) => state.auth.user);
   const token = useSelector((state) => state.auth.token);
+  // console.log("User:",user)
+  // console.log("Token:",token)
+
   //state Variable
   const [active, setActive] = useState("");
   //RTK query Mutation
@@ -72,7 +79,7 @@ const useRegisterForm = () => {
       Role: data.role,
     }).unwrap();
     //Store the Api response in the Store
-    
+
     //Dispatch
     // console.log(userResponse)
     dispatch(
@@ -89,6 +96,7 @@ const useRegisterForm = () => {
         token: userResponse.token,
       })
     );
+    navigate('/')
 
 
     // console.log(

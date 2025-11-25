@@ -2,8 +2,15 @@ import { Link } from "react-router-dom";
 import logo from "../images/logo.png";
 
 import Navbar from "./Navbar";
+import { useDispatch } from "react-redux";
+import { logout } from "../../../store/slices/authSlice";
 
 const Header = () => {
+  const dispatch = useDispatch();
+
+  const handleLogOut = () => {
+    dispatch(logout());
+  };
   return (
     <div>
       {/* Header Bar */}
@@ -32,10 +39,14 @@ const Header = () => {
               My Account
             </button>
           </Link>
-
-          <button className="px-3 py-2 text-xs sm:text-sm md:text-base text-black bg-white rounded border cursor-pointer hover:underline">
-            Logout
-          </button>
+          <Link to={"/"}>
+            <button
+              onClick={handleLogOut()}
+              className="px-3 py-2 text-xs sm:text-sm md:text-base text-black bg-white rounded border cursor-pointer hover:underline"
+            >
+              Logout
+            </button>
+          </Link>
         </div>
       </div>
 
