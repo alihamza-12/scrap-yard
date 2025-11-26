@@ -118,4 +118,4 @@ Feel free to submit issues and pull requests.
 
 ## License
 
-This project is private.
+This project is public.
