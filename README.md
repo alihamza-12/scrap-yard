@@ -13,7 +13,7 @@ A comprehensive React-based web application for scrap yard management, built wit
 
 ### Content Management
 
-- **Blogs System**: Dynamic blog listing and detailed blog pages with rich content display.
+- **Blogs System**: Comprehensive blog platform with 6 detailed articles covering environmental impact, scrap monetization, household items, recycling innovations, success stories, and recycling importance. Features rich content display with structured articles, images, and navigation.
 - **Products Section**: Dedicated page for showcasing scrap yard products and services.
 - **About Us**: Information page about the scrap yard business.
 - **Contact Us**: Interactive contact form with email sending capability using EmailJS.
@@ -153,7 +153,7 @@ scarb-yard/
 │   ├── pages/                    # Page components for routing
 │   │   ├── AboutUs.jsx           # About Us page content
 │   │   ├── Blogs.jsx             # Blogs listing page with grid layout
-│   │   ├── BlogsDetail.jsx       # Individual blog post detail page
+│   ├── BlogsDetail.jsx       # Detailed blog post page with 6 comprehensive articles on environmental impact, scrap monetization, household items, recycling innovations, success stories, and recycling importance. Features structured content with images, headings, and navigation.
 │   │   ├── ContactUs.jsx         # Contact Us page with form
 │   │   ├── Home.jsx              # Landing/home page
 │   │   ├── Login.jsx             # User login page
@@ -203,7 +203,7 @@ scarb-yard/
 1. **Navigation**: Use the navbar to navigate between Home, Products, Blogs, About Us, and Contact Us pages
 2. **User Registration**: Visit `/register` to create a new account with form validation
 3. **Authentication**: Login at `/login` to access protected features
-4. **Blog Reading**: Browse blogs on `/blogs` and click "Read More" for detailed posts
+4. **Blog Reading**: Browse 6 comprehensive blog articles on `/blogs` covering environmental impact, scrap monetization, household items, recycling innovations, success stories, and recycling importance. Click "Read More" for detailed structured content with images and navigation.
 5. **Contact**: Use the contact form on `/contact-us` to send inquiries
 6. **Account Management**: Access `/my-account` for user profile and transaction history
 
@@ -218,6 +218,7 @@ scarb-yard/
 
 - **Dark Theme**: Application uses a black background (`bg-black` in App.jsx) with Tailwind's dark mode classes
 - **Responsive Design**: All components are built mobile-first with responsive breakpoints
+- **Blog Content**: Comprehensive blog system with 6 detailed articles on scrap yard and recycling topics
 - **Performance**: Vite provides fast development and optimized production builds
 - **Code Quality**: ESLint ensures consistent code style across the project
 
