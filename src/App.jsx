@@ -29,7 +29,7 @@ const appRoute = createBrowserRouter([
         element: <Blogs />,
       },
       {
-        path: "/blogs/:id",
+        path: "/blog/:id",
         element: <BlogsDetail />,
       },
 

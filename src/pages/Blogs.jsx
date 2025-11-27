@@ -36,7 +36,7 @@ const Blogs = () => {
                   {blog.desc}
                 </p>
                 <Link
-                  to={`/blogs/${blog.id}`}
+                  to={`/blog/${blog.id}`}
                   className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md transition-colors duration-300"
                 >
                   Read More

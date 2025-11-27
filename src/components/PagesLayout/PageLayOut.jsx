@@ -1,10 +1,12 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import banner from "../images/banner3.png";
 
 const PageLayOut = () => {
   const location = useLocation();
   const url = location.pathname;
+  const { id } = useParams();
+  // console.log(id);
 
   return (
     <div>
@@ -12,23 +14,12 @@ const PageLayOut = () => {
       <div className="my-2 md:my-12 sm:my-4 lg:my-28">
         <h1 className="text-[#D2D2D2] text-4xl sm:text-5xl md:text-[76px] font-extralight text-center">
           {url === "/products" ? "Products" : ""}
-        </h1>
-        <h1 className="text-[#D2D2D2] text-4xl sm:text-5xl md:text-[76px] font-extralight text-center">
           {url === "/blogs" ? "Blogs" : ""}
-        </h1>
-        <h1 className="text-[#D2D2D2] text-4xl sm:text-5xl md:text-[76px] font-extralight text-center">
+          {url.startsWith("/blog/") && id ? `Blog ${id}` : ""}
           {url === "/about-us" ? "About Us" : ""}
-        </h1>
-        <h1 className="text-[#D2D2D2] text-4xl sm:text-5xl md:text-[76px] font-extralight text-center">
           {url === "/contact-us" ? "Contact Us" : ""}
-        </h1>
-        <h1 className="text-[#D2D2D2] text-4xl sm:text-5xl md:text-[76px] font-extralight text-center">
           {url === "/register" ? "Register Your Account" : ""}
-        </h1>
-        <h1 className="text-[#D2D2D2] text-4xl sm:text-5xl md:text-[76px] font-extralight text-center">
           {url === "/login" ? "Login Your Account" : ""}
-        </h1>
-        <h1 className="text-[#D2D2D2] text-4xl sm:text-5xl md:text-[76px] font-extralight text-center">
           {url === "/my-account" ? "My Account" : ""}
         </h1>
       </div>
